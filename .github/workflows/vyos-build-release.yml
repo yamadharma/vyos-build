@@ -19,6 +19,17 @@ jobs:
         TZ: Etc/UTC
       options: --privileged
 
+    permissions:
+      actions: read
+      checks: read
+      contents: write
+      deployments: write
+      issues: write
+      packages: write
+      pull-requests: write
+      repository-projects: write
+      security-events: write
+      statuses: write
 
     steps:
     - name: Set env
@@ -70,9 +81,9 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         tag_name: ${{ github.ref }}
-        release_name: VyOS ${{ github.ref }} for Education
+        release_name: VyOS ${{ github.ref }} 
         body: |
-          VyOS ${{ env.RELEASE_VERSION }} for Education
+          VyOS ${{ env.RELEASE_VERSION }}
         draft: true
         prerelease: true
 
