@@ -19,18 +19,17 @@ jobs:
         TZ: Etc/UTC
       options: --privileged
 
-  permissions:
-    actions: read
-    checks: read
-    contents: read
-    deployments: write
-    issues: write
-    packages: write
-    pull-requests: write
-    repository-projects: write
-    security-events: read
-    statuses: write
-      
+    permissions:
+      actions: read
+      checks: read
+      contents: write
+      deployments: write
+      issues: write
+      packages: write
+      pull-requests: write
+      repository-projects: write
+      security-events: write
+      statuses: write
 
     steps:
     - name: Set env
