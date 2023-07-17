@@ -1,0 +1,14 @@
+{
+    "name": "vyos-build",
+    "version": "1.3.3",
+    "description": "VyOS build for Education",
+    "main": "index.js",
+    "repository": "git@github.com:yamadharma/vyos-build.git",
+    "author": "Dmitry S. Kulyabov <yamadharma@gmail.com>",
+    "license": "CC BY 4.0",
+    "config": {
+	"commitizen": {
+            "path": "cz-conventional-changelog"
+	}
+    }
+}
