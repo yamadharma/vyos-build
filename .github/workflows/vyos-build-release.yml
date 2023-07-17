@@ -49,12 +49,12 @@ jobs:
 
         make iso
 
-    - name: make qemu
-      working-directory: vyos-build
-      run: |
-        set -eux
+    # - name: make qemu
+    #   working-directory: vyos-build
+    #   run: |
+    #     set -eux
 
-        make qemu
+    #     make qemu
 
     - name: ls
       run: |
@@ -89,15 +89,15 @@ jobs:
         #
         asset_content_type: application/x-iso9660-image
 
-    - uses: actions/upload-release-asset@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        #
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        #
-        asset_path: vyos-build/build/vyos-${{ env.RELEASE_VERSION }}-amd64.qcow2
-        #
-        asset_name: vyos-${{ env.RELEASE_VERSION }}-amd64.qcow2
-        #
-        asset_content_type: application/x-qemu-disk
+    # - uses: actions/upload-release-asset@master
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    #   with:
+    #     #
+    #     upload_url: ${{ steps.create_release.outputs.upload_url }}
+    #     #
+    #     asset_path: vyos-build/build/vyos-${{ env.RELEASE_VERSION }}-amd64.qcow2
+    #     #
+    #     asset_name: vyos-${{ env.RELEASE_VERSION }}-amd64.qcow2
+    #     #
+    #     asset_content_type: application/x-qemu-disk
